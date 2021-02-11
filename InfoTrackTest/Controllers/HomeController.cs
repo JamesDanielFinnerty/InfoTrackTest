@@ -53,18 +53,19 @@ namespace InfoTrackTest.Controllers
                 // find start of second result div by offsetting from the start of the string
                 var workingIndex = pageHtml.IndexOf(divStarter, 1);
 
+                // if no further results
                 if (workingIndex == -1)
                 {
-                    // handle final reult case
+                    // handle final result case by appending all remainging html
                     resultsHtml.Add(pageHtml);
                 }
                 else
                 {
-                    // handle usual case
+                    // handle usual case by removing html relating to result and appending to result list
                     var targetDiv = pageHtml.Substring(0, workingIndex);
                     resultsHtml.Add(targetDiv);
 
-                    // trim current div off of the start of the file
+                    // trim current div off of the start of the file so that we cna continue the process
                     pageHtml = pageHtml.Substring(workingIndex);
                 }
             }
@@ -75,7 +76,8 @@ namespace InfoTrackTest.Controllers
             {
                 if(resultsHtml[i].Contains(search.TargetURL))
                 {
-                    output.Append(i.ToString() + " ");
+                    var numberToPrint = i + 1; // handle 0 offsetting
+                    output.Append(numberToPrint.ToString() + " ");
                 }
             }
 
