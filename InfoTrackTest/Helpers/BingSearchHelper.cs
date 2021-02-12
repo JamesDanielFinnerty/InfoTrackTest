@@ -1,11 +1,12 @@
-﻿using System;
+﻿using InfoTrackTest.Helpers.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace InfoTrackTest.Helpers
 {
-    public class BingSearchHelper : BaseSearchHelper
+    public class BingSearchHelper : BaseSearchHelper, IBingSearchHelper
     {
         public BingSearchHelper()
         {

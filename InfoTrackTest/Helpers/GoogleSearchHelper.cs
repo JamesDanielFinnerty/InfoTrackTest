@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InfoTrackTest.Helpers
 {
-    public class GoogleSearchHelper : BaseSearchHelper
+    public class GoogleSearchHelper : BaseSearchHelper, IGoogleSearchHelper
     {
         public GoogleSearchHelper()
         {
