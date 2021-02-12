@@ -72,7 +72,8 @@ namespace InfoTrackTest.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            ViewBag.SearchResult = "Hit Submit to see your score...";
+            return View(new SearchFormModel());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
